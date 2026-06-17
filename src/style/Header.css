@@ -1,0 +1,87 @@
+.shopwave-navbar{
+  background-color: rgb(50, 36, 67);
+  font-family:Arial, Helvetica, sans-serif;
+   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.shopwave-brand {
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white !important;
+  letter-spacing: -0.5px;
+}
+
+.search-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-wrapper {
+  display: flex;
+  width: 100%;
+  border-radius: 50px;
+  overflow: hidden;
+  border: 2px solid rgba(147, 227, 19, 0.15);
+}
+
+.search-wrapper:focus-within {
+  border-color: blanchedalmond;
+  box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.2);
+}
+
+.search-input {
+  flex: 1;
+  background: rgb(196, 194, 190) !important;
+  border: none !important;
+  color: rgb(19, 6, 6) !important;
+  padding: 8px 18px;
+  border-radius: 50px 0 0 50px;
+  font-size: 0.9rem;
+  box-shadow: none !important;
+}
+
+.search-btn {
+  background: rgb(33, 37, 154);
+  border: none;
+  color: white;
+  padding: 0 18px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 0 50px 50px 0;
+}
+.search-btn:hover{
+  background-color: blueviolet;
+}
+
+.navbar-nav  .nav-link {
+  color: rgba(255,255,255,0.75) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 14px !important;
+  border-radius: 8px;
+  letter-spacing: 0.2px;
+}
+.nav-link:hover{
+  background-color:rgb(92, 54, 138);
+}
+.nav-cart{
+  font-size: 20px;
+  background-color: blue;
+  border-radius: 50px;
+  padding: 10px;
+}
+.active{
+  background-color:rgb(92, 54, 138);
+}
+.nav-cart-total{
+  color:rgb(210, 220, 210);
+  font-size: 1.5rem;
+  font-weight: bolder;
+  position: relative;
+  bottom :0.8rem;
+}
