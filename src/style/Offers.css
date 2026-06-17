@@ -1,0 +1,27 @@
+.offers-section {
+  background-color: #f9f9f9;
+}
+
+.offers-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.offers-subtitle {
+  font-size: 1rem;
+}
+
+.offer-card {
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.offer-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+.offer-badge {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
