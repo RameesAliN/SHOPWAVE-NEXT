@@ -14,14 +14,14 @@ export default function Carousel(){
       </div>
  
       <div className="carousel-inner">
-        <div className="carousel-item active" style={{height:'400px'}}>
-          <Image src="/image/carouselimage/7912204.jpg" className="d-block w-100" alt="slide1" fill style={{ objectFit: 'cover' }}  />
+        <div className="carousel-item active" >
+          <Image src="/image/carouselimage/7912204.jpg" className="d-block w-100" alt="slide1" fill   />
         </div>
-        <div className="carousel-item" style={{height:'400px'}}>
-          <Image src="/image/carouselimage/2549650.jpg" className="d-block w-100" alt="slide2" fill style={{ objectFit: 'cover' }}/>
+        <div className="carousel-item" >
+          <Image src="/image/carouselimage/2549650.jpg" className="d-block w-100" alt="slide2" fill/>
         </div>
-        <div className="carousel-item" style={{height:'400px'}}>
-          <Image src="/image/carouselimage/5765164.jpg" className="d-block w-100" alt="slide3" fill style={{ objectFit: 'cover' }} />
+        <div className="carousel-item">
+          <Image src="/image/carouselimage/5765164.jpg" className="d-block w-100" alt="slide3" fill />
         </div>
       </div>
 

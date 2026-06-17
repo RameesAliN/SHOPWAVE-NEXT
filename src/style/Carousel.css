@@ -1,5 +1,6 @@
-.carousel-item img {
+.carousel-item {
   height: 500px;
-  object-fit:fill;
-  width: 100%;
+}
+.carousel-item Image{
+  object-fit: fill;
 }
