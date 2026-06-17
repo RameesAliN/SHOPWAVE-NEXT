@@ -1,0 +1,83 @@
+.footer {
+  background-color: rgb(50, 36, 67);
+  color: white;
+  padding: 56px 0 40px;
+  margin-top: 100px;
+  z-index: -10;
+}
+
+.footer-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.footer-logo i {
+  color: orange;
+  font-size: 1.4rem;
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1rem;
+}
+
+.social-link:hover {
+  background-color: red;
+  color: white;
+}
+
+.footer-heading {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.88rem;
+}
+
+.footer-links a:hover {
+  color: red;
+  padding-left: 4px;
+}

@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import BootstrapClient from "@/utils/bootsrtapUtils";
 //import '../style/globals.css'
 import Header from "@/component/header/Header";
+import Footer from "./footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,7 @@ export default function RootLayout({
         <Header/>
         <BootstrapClient/>
         {children}
-        
+        <Footer/>
       </body>
     </html>
   );
