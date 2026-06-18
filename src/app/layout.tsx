@@ -6,6 +6,7 @@ import BootstrapClient from "@/utils/bootsrtapUtils";
 import '../style/globals.css'
 import Header from "@/component/header/Header";
 import Footer from "../component/footer/Footer";
+import StoreProvider from "@/store/storeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,9 @@ export default function RootLayout({
       <body>
         <Header/>
         <BootstrapClient/>
+        <StoreProvider>
         {children}
+        </StoreProvider>
         <Footer/>
       </body>
     </html>

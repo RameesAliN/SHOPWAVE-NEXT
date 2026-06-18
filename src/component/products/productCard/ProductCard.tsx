@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
-import '../../style/ProductCard.css'
+import '../../../style/ProductCard.css'
 import Image from 'next/image';
 
 function ProductCard(props: any) {

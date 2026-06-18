@@ -13,4 +13,7 @@ export default class ProductService extends ServiceBase{
     return product;
     //console.log(`${this.API_URL}${id}`)
   }
+
+  static productCategory = ['ALL', `men's clothing`, 'Jewelery', 'Electronics', `women's clothing`];
+  
 }

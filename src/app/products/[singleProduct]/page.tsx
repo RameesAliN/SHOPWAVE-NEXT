@@ -1,4 +1,4 @@
-import ProductCard from '@/component/productCard/ProductCard';
+import ProductCard from '@/component/products/productCard/ProductCard';
 import ProductService from '@/services/product-services';
 import React from 'react'
 

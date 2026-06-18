@@ -1,12 +1,14 @@
 import React from 'react'
 import ProductService from '@/services/product-services'
-import ProductCard from '@/component/productCard/ProductCard';
+import ProductCard from '@/component/products/productCard/ProductCard';
+import CategoryButton from '@/component/products/categoryButton';
 import '../../style/Product.css'
+import FilteredProduct from '@/component/products/filteredProduct';
 
 export default async function Products() {
   const products = await ProductService.fetchProduct();
-  console.log(products)
-
+  //console.log(products)
+  
   return <>
     <div className="product-list-page">
 
@@ -20,24 +22,23 @@ export default async function Products() {
       <div className="filters-toolbar px-5 py-3">
         <div className="category-filters">
           
-          {/* {categories.map((cat) => {
-            return <button className={`filter-chip ${activeFilter == cat ? 'filter-chip-active' : ''}`} onClick={() => setActiveFilter(cat)}>
-              {cat}</button>
-          })} */}gggg
+          {ProductService.productCategory.map((cat) => {
+            return <CategoryButton key={cat} cat={cat}/>
+          })}
 
 
 
         </div>
       </div>
-
-      <div className="row row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3 ">
+          <FilteredProduct products={products}/>
+      
         {/* {filterProduct.map((product) => {
           return <ProductCard product={product} />
         })} */}
-        {products.map((p:any)=>{
+        {/* {products.map((p:any)=>{
             return <ProductCard key={p.id} product={p}/>
-          })}
-      </div>
+          })} */}
+      
 
     </div>
   </>
