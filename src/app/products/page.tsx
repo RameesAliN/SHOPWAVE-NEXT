@@ -26,20 +26,9 @@ export default async function Products() {
             return <CategoryButton key={cat} cat={cat}/>
           })}
 
-
-
         </div>
       </div>
           <FilteredProduct products={products}/>
-      
-        {/* {filterProduct.map((product) => {
-          return <ProductCard product={product} />
-        })} */}
-        {/* {products.map((p:any)=>{
-            return <ProductCard key={p.id} product={p}/>
-          })} */}
-      
-
     </div>
   </>
 }

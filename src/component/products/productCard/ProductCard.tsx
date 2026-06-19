@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link';
 import '../../../style/ProductCard.css'
 import Image from 'next/image';
+import AddToCartButton from '../AddToCartButton';
 
 function ProductCard(props: any) {
   const products = props.product;
@@ -33,13 +34,7 @@ function ProductCard(props: any) {
             <p className="text-muted small mb-0">FREE Delivery by <strong>Amazon</strong></p>
           </Link>
 
-          <div className="d-flex justify-content-center">
-            <Link href='/cart'>
-              <button type="button" className="btn btn-outline-dark mt-3" style={{ fontSize: '1.4vw' }}  >
-                Add To Cart
-              </button>
-            </Link>
-          </div>
+         <AddToCartButton/>
 
         </div>
       </div>
