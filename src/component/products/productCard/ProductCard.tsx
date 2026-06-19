@@ -34,7 +34,7 @@ function ProductCard(props: any) {
             <p className="text-muted small mb-0">FREE Delivery by <strong>Amazon</strong></p>
           </Link>
 
-         <AddToCartButton/>
+         <AddToCartButton key={products} product={products}/>
 
         </div>
       </div>
