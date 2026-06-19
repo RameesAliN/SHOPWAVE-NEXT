@@ -1,5 +1,6 @@
 import Link from "next/link"
 import '../../style/Header.css'
+import SearchProduct from "./SearchProduct"
 
 
 export default function Header(){
@@ -11,14 +12,7 @@ export default function Header(){
           <span className="brand-text">ShopWave</span>
         </Link>
 
-        <form className="d-flex mx-auto search-form" >
-          <div className="search-wrapper">
-            <input className="form-control search-input" type="search" placeholder="Search products..."   />
-            <button className="search-btn" type="submit">
-              Search
-            </button>
-          </div>
-        </form>
+       <SearchProduct/>
 
         <ul className="navbar-nav align-items-center gap-1">
 
@@ -54,7 +48,7 @@ export default function Header(){
           </li>
 
            <li className="nav-item ms-2">
-              <Link href="/login" className={'nav-link'}> loginStatus </Link>
+              <Link href="/login" className={'nav-link'}> login</Link>
           </li>
 
         </ul>
