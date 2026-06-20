@@ -2,6 +2,7 @@ import Link from "next/link"
 import '../../style/Header.css'
 import SearchProduct from "./SearchProduct"
 import TotalProduct from "./TotalProduct"
+import LoginStatus from "./LoginStatus"
 
 
 export default function Header(){
@@ -48,9 +49,7 @@ export default function Header(){
             </Link>
           </li>
 
-           <li className="nav-item ms-2">
-              <Link href="/login" className={'nav-link'}> login</Link>
-          </li>
+           <LoginStatus/>
 
         </ul>
 
