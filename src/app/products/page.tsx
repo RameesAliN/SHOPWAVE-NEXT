@@ -8,6 +8,17 @@ import FilteredProduct from '@/component/products/filteredProduct';
 export default async function Products() {
   const products = await ProductService.fetchProduct();
   //console.log(products)
+
+  if (products === null) {
+    return (
+      <div className="product-list-page">
+        <div className="container text-center mt-5">
+          <h2 className="text-danger">Something went wrong</h2>
+          <p>We couldn't load the products right now. Please try again later.</p>
+        </div>
+      </div>
+    );
+  }
   
   return <>
     <div className="product-list-page">

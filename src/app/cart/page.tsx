@@ -120,7 +120,7 @@ function Cart() {
             <p>TOTAL</p>
             <p >{ProductService.summeryTotal(subTotals, taxs)}</p>
           </div>
-          <button type="button" className="btn btn-danger mt-5 mb-5" >Proceed To Checkout</button>
+          <button type="button" className="btn btn-danger mt-5 mb-5" onClick={()=>{router.push('/checkout')}}>Proceed To Checkout</button>
 
         </div>
 
