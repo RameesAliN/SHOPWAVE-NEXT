@@ -1,15 +1,26 @@
-import React from 'react'
+"use client"
+import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux';
 import Link from 'next/link'
+import ProductService from '@/services/product-services';
+import { useAppDispatch } from '@/store/hooks';
+import { fetchCart,clearCart,increaseQuantity,decreaseQuantity,removeFromCart } from '@/slice/cartSlice';
 import '../../style/Cart.css'
 
-function addToCart() {
+
+function Cart() {
+  let subTotals:any=0;
+  let taxs:any=0;
+  const dispatch = useAppDispatch();
+  const {cart,totalItems} = useSelector((state: any) => state.getCart)
+  useEffect(() => { dispatch(fetchCart()); }, []);
   return <>
     <div className="cart-page">
 
       <div className="cart-title">
         <div className="container">
           <h1 >Your Cart</h1>
-          <p>totalItems items</p>
+          <p>{totalItems} items</p>
         </div>
       </div>
 
@@ -23,19 +34,17 @@ function addToCart() {
             <div className="title-quantity">QUANTITY</div>
             <div className="title-total">TOTAL</div>
           </div>
-          {/* {cart.map((cartprod) => {
 
+          {cart.map((cartprod: any) => {
             const product = cartprod.products;
-
-            subTotals = subTotal(cartprod.quantity, product.price, subTotals)
-
-            return <div className="cart-product-items">
+            subTotals = ProductService.subTotal(cartprod.quantity, product.price, subTotals)
+            return <div className="cart-product-items" key={cartprod.id}>
               <div className="cart-product-item">
                 <img className="cart-product-image" src={product.image}></img>
                 <div>
                   <p className="cart-product-category">{product.category.toUpperCase()}</p>
                   <p className="cart-product-category-description">{product.title}</p>
-                  <button className="cart-product-remove" onClick={()=>dispatch(removeFromCart(cartprod))}  ><i className="bi bi-trash"></i><span>Remove</span></button>
+                  <button className="cart-product-remove" onClick={()=>{dispatch(removeFromCart(cartprod))}}><i className="bi bi-trash"></i><span>Remove</span></button>
                 </div>
               </div>
 
@@ -43,34 +52,29 @@ function addToCart() {
                 ${product.price}
               </div>
 
-
               <div className="d-flex align-items-center">
                 <div className="cart-product-qty">
-
-                  <button className="qty-ctrl-btn" onClick={() => { dispatch(decreaseQuantity(cartprod)) }}>
+                  <button className="qty-ctrl-btn" onClick={()=>{dispatch(decreaseQuantity(cartprod))}}>
                     <i className="bi bi-dash"></i>
                   </button>
                   <span className="qty-display">{cartprod.quantity}</span>
-
-                  <button className="qty-ctrl-btn" onClick={() => { dispatch(increaseQuantity(cartprod)) }}>
+                  <button className="qty-ctrl-btn" onClick={()=>{dispatch(increaseQuantity(cartprod))}}>
                     <i className="bi bi-plus"></i>
                   </button>
                 </div>
               </div>
 
               <div className="cart-product-total">
-                ${total(cartprod.quantity, product.price)}
+                ${ProductService.total(product.price,cartprod.quantity)}
               </div>
-
             </div>
-
-          })} */}
+          })}
 
           <div className="cart-product-action">
             <Link href='/products'>
               <button type="button" className="btn btn-outline-dark"><i className="bi bi-arrow-left"></i><span>Continue Shopping</span></button>
             </Link>
-            <button type="button"  className="btn btn-outline-dark"><i className="bi bi-trash"></i><span>Clear Cart</span></button>
+            <button type="button" className="btn btn-outline-dark" onClick={()=>{dispatch(clearCart())}}><i className="bi bi-trash"></i><span>Clear Cart</span></button>
           </div>
 
         </div> {/*cart product end here*/}
@@ -79,7 +83,7 @@ function addToCart() {
           <h3 className="mb-5">Order Summary</h3>
           <div className="order-subtotal">
             <p>Subtotal(totalItems)</p>
-            <p>$subTotals</p>
+            <p>${subTotals}</p>
           </div>
           <div className="order-shipping">
             <p>SHIPPING</p>
@@ -87,11 +91,11 @@ function addToCart() {
           </div>
           <div className="order-tax">
             <p>Tax(10%)</p>
-            <p >$taxs = tax(subTotals)</p>
+            <p >${taxs = ProductService.tax(subTotals)}</p>
           </div>
           <div className="order-total">
             <p>TOTAL</p>
-            <p >summeryTotal</p>
+            <p >{ProductService.summeryTotal(subTotals, taxs)}</p>
           </div>
           <button type="button" className="btn btn-danger mt-5 mb-5" >Proceed To Checkout</button>
 
@@ -102,4 +106,4 @@ function addToCart() {
   </>
 }
 
-export default addToCart
+export default Cart

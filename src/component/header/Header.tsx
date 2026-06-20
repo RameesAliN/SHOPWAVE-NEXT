@@ -1,6 +1,7 @@
 import Link from "next/link"
 import '../../style/Header.css'
 import SearchProduct from "./SearchProduct"
+import TotalProduct from "./TotalProduct"
 
 
 export default function Header(){
@@ -43,7 +44,7 @@ export default function Header(){
           <li className="nav-item ms-2">
             <Link href="/cart" className="cart-icon-btn nav-link " aria-label="Shopping Cart">
               <i className="bi bi-bag-fill nav-cart"></i>
-              <span className='nav-cart-total'>0</span>
+              <TotalProduct/>
             </Link>
           </li>
 
